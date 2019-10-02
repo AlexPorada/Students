@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-xs-12 col-md-12  col-lg-12">
+    <ul class="nav nav-tabs">
+      <li role="presentation"
+          [routerLinkActiveOptions]="{exact: true}"
+          routerLinkActive="active">
+        <a [routerLink]="['/']">Home</a>
+      </li>
+      <li role="presentation"
+          routerLinkActive="active">
+        <a [routerLink]="['/students-list']">Students</a>
+      </li>
+      <li role="presentation"
+          routerLinkActive="active">
+        <a [routerLink]="['/rooms-list']">Rooms</a>
+      </li>
+      <li role="presentation"
+          routerLinkActive="active">
+        <a [routerLink]="['/teachers-list']">Teachers</a>
+      </li>
+    </ul>
+  </div>
+</div>

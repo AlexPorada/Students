@@ -1,0 +1,18 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\app",
+    "\\app\\models\\rooms",
+    "\\app\\rooms-list",
+    "\\app\\rooms-list\\room-create",
+    "\\app\\rooms-list\\rooms",
+    "\\app\\students-list",
+    "\\app\\students-list\\student-create",
+    "\\app\\students-list\\students",
+    "\\app\\teachers-list",
+    "\\app\\teachers-list\\teacher",
+    "\\app\\teachers-list\\teacher-create"
+  ],
+  "SelectedNode": "\\app\\students-list\\student-create\\student-create.component.css",
+  "PreviewInSolutionExplorer": false
+}

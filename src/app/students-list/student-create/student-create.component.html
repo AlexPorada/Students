@@ -1,0 +1,74 @@
+<div class="row" style="margin-top: 35px;">
+  <div class="col-xs-8 col-sm-10 col-md-10 col-lg-10 col-xs-offset-2 col-sm-offset-2 col-md-offset-2 col-lg-offset-2">
+    <form [formGroup]="signForm" (ngSubmit)="onSubmit()">
+      <div class="form-group row">
+        <label for="firstName"
+               class="col-sm-2 col-form-label">First Name</label>
+        <div class="col-sm-5">
+          <input type="text"
+                 class="form-control"
+                 id="firstName"
+                 formControlName="firstName" />
+        </div>
+        <div *ngIf="signForm.controls['firstName'].invalid && signForm.controls['firstName'].touched"
+             class="col-sm-5 validation-msg-container">
+          <p>First Name can't be empty or have more than 100 symbols</p>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="secondName"
+               class="col-sm-2 col-form-label">Second Name</label>
+        <div class="col-sm-5">
+          <input type="text"
+                 class="form-control"
+                 id="secondName"
+                 formControlName="secondName" />
+        </div>
+        <div *ngIf="signForm.controls['secondName'].invalid && signForm.controls['secondName'].touched"
+             class="col-sm-5 validation-msg-container">
+          <p>Second Name can't be empty or have more than 100 symbols</p>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="birthDate"
+               class="col-sm-2 col-form-label">Birthday Date</label>
+        <div class="col-sm-5">
+          <input type="date"
+                 class="form-control"
+                 id="birthDate"
+                 formControlName="birthDate" />
+        </div>
+        <div *ngIf="signForm.controls['birthDate'].invalid && signForm.controls['birthDate'].touched"
+             class="col-sm-5 validation-msg-container">
+          <p>Birthday date can't be empty or have more than 100 symbols</p>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="room"
+               class="col-sm-2 col-form-label">Room</label>
+        <div class="col-sm-5">
+          <select id="room"
+                  class="form-control"
+                  formControlName="roomId">
+            <option value="null">None</option>
+            <option *ngFor="let r of rooms" value="{{r.id}}">{{r.number}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="teachers"
+               class="col-sm-2 col-form-label">Teachers</label>
+        <div class="col-sm-5">
+         <angular2-multiselect [data]="dropdownList"
+                               [settings]="dropDownSettings"
+                               formControlName="teacherIds"></angular2-multiselect>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-sm-7">
+          <button type="submit" class="btn btn-primary" style="float: right">Sign in</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

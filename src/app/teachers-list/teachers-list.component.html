@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-xs-12 col-md-12 col-lg-12">
+    <simple-table
+                  [data]="teachers"
+                  [columns]="tableColumns"
+                  [settings]="tableSettings"
+                  (onEdit)="onEditClick($event)"
+                  (onDelete)="onDeleteClick($event)">
+
+    </simple-table>
+  </div>
+</div>
+
+<div class="row" style="margin-top: 35px">
+  <div class="col-sm-2 col-md-2  col-lg-2  col-sm-offset-10 col-md-offset-10 col-lg-offset-10">
+    <button class="btn btn-primary"
+            style="float:right"
+            (click)="onAddTeacherClick($event)">
+      Add Teacher
+    </button>
+  </div>
+</div>

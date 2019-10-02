@@ -1,0 +1,26 @@
+<div class="row" style="margin-top: 35px;">
+  <div class="col-xs-8 col-sm-10 col-md-10 col-lg-10 col-xs-offset-2 col-md-offset-2 col-lg-offset-2" >
+    <form [formGroup]="signForm" (ngSubmit)="onSubmit()">
+      <div class="form-group row">
+        <label for="number" class="col-sm-2 col-form-label">Room number</label>
+        <div class="col-sm-5">
+          <input type="text"
+                 class="form-control"
+                 id="number"
+                 formControlName="number" />
+        </div>
+        <div *ngIf="signForm.controls['number'].invalid && signForm.controls['number'].touched"
+             class="col-sm-5 validation-msg-container">
+          <p>Room number can't be empty and it must consists only from numbers </p>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <div class="col-sm-7">
+          <button type="submit" class="btn btn-primary" style="float:right">Save</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>

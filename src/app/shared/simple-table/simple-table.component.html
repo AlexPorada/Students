@@ -1,0 +1,29 @@
+
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th *ngFor="let col of columns">{{col.title}}</th>
+        <th *ngIf="settings.actions">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of data;">
+        <td *ngFor="let col of columns">
+          <span *ngIf="!isDateType(item[col.key]); else dateContent">{{item[col.key]}}</span>
+          <ng-template #dateContent>
+            <span>{{item[col.key] | date: 'dd.MM.yyyy'}}</span>
+          </ng-template>
+        </td>
+        <td *ngIf="settings.actions">
+          <span>
+            <a *ngIf="settings.edit" (click)="onEditClick(item)">Edit</a>
+          </span>
+          <span>
+            <a *ngIf="settings.delete" (click)="onDeleteClick(item)">Delete</a>
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
